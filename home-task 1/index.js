@@ -1,5 +1,5 @@
 const n = 3000
-let f1time = Date.now()
+
 
 function myFunc1(n = null){
 	if(n === null){
@@ -19,12 +19,17 @@ else if(n === ${i}){
 }
 `;
   	}
-  	console.log(Date.now() - f1time + " mlsec for if")
+  	
   	return str
 }
+let str1 = myFunc1(n)
+let f1time = Date.now()
+eval(str1);
+console.log(Date.now() - f1time + " mlsec for if")
 
-eval(myFunc1(n));
-let f2time = Date.now()
+
+
+
 function myFunc2(n = null){
 	if(n === null){
 		return null
@@ -44,9 +49,11 @@ function myFunc2(n = null){
 	}`
 		}
 	}
-	console.log(Date.now() - f2time + " mlsec for switch")
+	
 	return str
 }
 
-  
-eval(myFunc2(n));
+let str2 = myFunc2(n)
+let f2time = Date.now()
+eval(str2);
+console.log(Date.now() - f2time + " mlsec for switch")
